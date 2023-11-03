@@ -1,0 +1,23 @@
+<div class="hero"
+  {% if section.settings.hero_image %}
+    style="background-image:url({{section.settings.hero_image | image_url }})"
+  {% endif %}
+  >  
+</div>
+{% schema %}
+  {
+    "name": "Hero section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "hero_image",
+        "label": "Hero Image"
+      }    
+    ],
+    "presets": [
+      {
+        "name": "Hero"
+      }
+    ]
+  }
+{% endschema %}
