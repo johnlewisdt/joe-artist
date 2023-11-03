@@ -1,0 +1,28 @@
+<div class="intro-section text-center">
+  <h1 class="intro-heading">
+    {{ section.settings.intro_heading }}
+  </h1>
+  <div class="intro-text">
+    <p>{{ section.settings.intro_text }}</p>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Intro section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "intro_heading",
+        "label": "Intro Heading",
+        "default": "Intro heading here"
+      },
+      {
+        "type": "richtext",
+        "id": "intro_text",
+        "label": "Intro Text",
+        "default": "<p>Intro text here<\/p>"
+      }
+    ]
+  }
+{% endschema %}
