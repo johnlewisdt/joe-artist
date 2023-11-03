@@ -1,3 +1,10 @@
+{% liquid 
+  if section.settings.menu.links == blank
+    assign main_menu_linklist = linklists[section.settings.menu].links
+  else
+    assign main_menu_linklist = section.settings.menu.links
+  endif
+%}
 <div class="header-bar">
   <header id="header" class="header" style="overflow-y:visible">
     <div class="header-content">
@@ -6,10 +13,29 @@
     </div>
     {% render 'minicart' %}
   </header>
+  <nav role="navigation">
+    {% for link in main_menu_linklist %}
+      {% if link.links != blank %}
+        {% assign link_handle = link.handle | replace: '-', '_' %}
+        {% for childlink in link.links %}
+          <a href="{{ childlink.url }}">{{ childlink.title }}</a>
+        {% endfor %}     
+      {% else %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {% endif %}
+    {% endfor %}
+  </nav>
 </div>
 {% schema %}
   {
     "name": "Header",
-    "settings": []
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "menu",
+        "default": "main-menu",
+        "label": "Heading Navigation Menu"
+      }
+    ]
   }
 {% endschema %}
