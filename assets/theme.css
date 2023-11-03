@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova&family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap');
+
+html {
+  font-size: 12px;
+  scroll-behavior: smooth;
+  background: #000;
+}
+
+body {
+  font-family: "Bona Nova", serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #f3f3f3;
+  overflow-x: hidden;
+}
+.page-container {
+  width: 100vw;
+  height: auto;
+  overflow-x: hidden;
+}
+
+button {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+    padding: 1rem 3rem;
+    background: #FFFB9D;
+    border-radius: 4px;
+    color: #000;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+}
+
+header {
+  position: absolute;
+  background: rgba(0,0,0,0.3);
+  width: 100vw;
+  min-height: 100px;
+  z-index: 2;
+}
+
+header .logo {
+  margin-left: 2rem;
+  padding: 2rem 0 0;
+}
+
+header .logo svg {
+  width: unset;
+}
+
+header .header-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+header button {
+  background: transparent;
+  border: none;
+}
+
+header .cart-icon-counter {
+  position: relative;
+}
+
+.cart-icon-counter .cart-count {
+  position: absolute;
+  top: 2.7rem;
+  right: 2rem;
+  background: rgba(0,0,255,0.3);
+  border-radius: 50%;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+  padding-top: 0.2rem;
+}
+
+header .cart-toggle {
+  cursor: pointer;
+  position: relative;
+  background: transparent;
+  border: none;
+  margin-top: 2rem;
+}
+
+header .close-toggle {
+  cursor: pointer;
+  background: transparent;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  transition: color 300ms linear;
+}
+
+a:hover {
+  color: #17d1ea;
+}
+
+li {
+  list-style: none;
+}
+
+@keyframes hover {
+  50% {
+    transform: translateX(10px);
+  }
+}
