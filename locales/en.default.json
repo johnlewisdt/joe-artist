@@ -6,5 +6,19 @@
         "label_short": "Qty"
       }
     }
+  },
+  "cart": {
+    "general": {
+      "view_cart": "View Bag",
+      "add_to_cart": "Add to Bag",
+      "coming_soon": "Coming Soon",
+      "checkout": "Checkout",
+      "sold_out": "Sold Out",
+      "minicart_title": "Your Bag",
+      "continue_shopping": "Continue shopping",
+      "subtotal_text": "Subtotal",
+      "empty": "Your bag is empty",
+      "items_text": "items"
+    }
   }
 }
