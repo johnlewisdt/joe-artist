@@ -33,10 +33,10 @@
     {{ content_for_header }}
 
     {{ 'reset.css' | asset_url | stylesheet_tag }}
-    {{ 'theme.css' | asset_url | stylesheet_tag }}
     {{ 'minicart.css' | asset_url | stylesheet_tag }}
     {{ 'side-drawer.css' | asset_url | stylesheet_tag }}
     {{ 'loading-overlay.css' | asset_url | stylesheet_tag }}
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
   </head>
   <body>
     {% section 'header' %}
@@ -46,6 +46,8 @@
     {% section 'footer' %}
     <script src="{{ 'index.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'minicart.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'quantity.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'side-drawer.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'side-drawer-toggle.js' | asset_url }}" defer="defer"></script>
   </body>
