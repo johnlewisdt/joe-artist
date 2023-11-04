@@ -1,14 +1,14 @@
 <side-drawer class="drawer drawer-header-right" id="drawer-mini-cart">
   <div class="drawer-inner">
     <div class="drawer-header">
-      <span class="drawer-title">Cart title</span>
-      
+      <span class="drawer-title">{{ 'cart.general.minicart_title' | t }}</span>
+
       <side-drawer-toggle data-drawer="drawer-mini-cart">
         {% render 'icon-close' %}
       </side-drawer-toggle>
 
       <mini-cart class="drawer-content mini-cart">
-        Cart contents
+        {% render 'minicart-items' %}
       </mini-cart>
 
     </div>
