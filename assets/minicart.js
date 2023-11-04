@@ -44,6 +44,55 @@ class Minicart extends HTMLElement {
     }
   }
 
+  //section rendering for minicart
+  renderMinicart(html){
+
+    if (html) {
+      //insert cart items
+      this.querySelector('.mini-cart-items-js').innerHTML = html;
+
+      //add event listeners
+      this.addListeners()
+
+      //update cart count
+      this.updateCount()
+
+      //update total
+      this.updateTotal()
+
+      //update elements
+      this.updateElements()
+
+      //remove loading icon
+      this.classList.remove('loading');
+    } else {
+      fetch('/?section_id=minicart-js')
+      .then((response) => {
+        return response.text();
+      })
+      .then((response) => {
+        //insert cart items
+        this.querySelector('.mini-cart-items-js').innerHTML = response;
+
+        //add event listeners
+        this.addListeners()
+
+        //update cart count
+        this.updateCount()
+
+        //update total
+        this.updateTotal()
+
+        //update elements
+        this.updateElements()
+
+        //remove loading icon
+        this.classList.remove('loading');
+      })
+    }
+
+  }
+
   handleMinicartTrigger(){
     // renders minicart on toggle
     this.renderMinicart()
