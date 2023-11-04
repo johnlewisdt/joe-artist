@@ -6,7 +6,47 @@ class Minicart extends HTMLElement {
     document.addEventListener('mini-cart-open', this.handleMinicartTrigger.bind(this))
   }
 
+    //quantity input change
+  handleInputChange(input){
+    // updates cart with line item changes
+    this.classList.add('loading');
+    let lineKey = input.getAttribute('data-key');
+    let quantity = parseInt(input.value);
+
+    if (lineKey && quantity >= 0) {
+      const body = JSON.stringify({
+        id: lineKey,
+        quantity: quantity,
+        sections: 'minicart-js'
+      });
+
+      fetch('/cart/change.json', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'X-Requested-With': 'xmlhttprequest'
+        },
+        ...{ 
+          body
+        }})
+      .then((response) => {
+        return response.text();
+      }).then((text) => {
+        let sectionHtml = JSON.parse(text).sections['minicart-js']
+        this.renderMinicart(sectionHtml)
+      }).catch((e) => {
+        console.error(e);
+      });
+    } else {
+      this.classList.remove('loading');
+      console.error('No line item details');
+    }
+  }
+
   handleMinicartTrigger(){
+    // renders minicart on toggle
+    this.renderMinicart()
     const event = new Event('mini-cart-toggle');
     document.getElementById('mini-cart').dispatchEvent(event);
   }
@@ -38,6 +78,22 @@ class Minicart extends HTMLElement {
     if (totalElements && cartTotal) {
       totalElements.forEach(el => {
         el.innerHTML = cartTotal.innerHTML
+      })
+    }
+  }
+
+  updateElements(){
+    //hide and show elements depending on cart items
+    let hideWhenCartEmpty = document.querySelectorAll('.hide-mini-cart-empty-js')
+    let itemCount = parseFloat(document.getElementById('cart-item-count-hidden').querySelector('.mini-cart-item-count-js').innerHTML)
+
+    if (hideWhenCartEmpty && itemCount >= 0) {
+      hideWhenCartEmpty.forEach(el => {
+        if (itemCount > 0) {
+          el.classList.remove('hidden')
+        } else {
+          el.classList.add('hidden')
+        }
       })
     }
   }
