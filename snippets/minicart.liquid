@@ -8,31 +8,29 @@
       </side-drawer-toggle>
     </div>
 
-      <mini-cart class="drawer-content mini-cart mini-cart-items-js">
-        {% render 'icon-loading-overlay-spinner' %}
-  
-        <div class="mini-cart-items mini-cart-items-js">
-          {% render 'minicart-items' %}
-        </div>
-      </mini-cart>
+    <mini-cart class="drawer-content mini-cart mini-cart-items-js">
+      {% render 'icon-loading-overlay-spinner' %}
 
-      <div class="drawer-footer mini-cart-footer">
+      <div class="mini-cart-items mini-cart-items-js">
+        {% render 'minicart-items' %}
+      </div>
+    </mini-cart>
+
+    <div class="drawer-footer mini-cart-footer">
 
       <a href="/checkout" class="button button-full-width button-full-width hide-mini-cart-empty-js {% if cart.item_count == 0 %}hidden{% endif %}">{{ 'cart.general.checkout' | t }}</a>
 
-        {% if settings.mini_cart_promo_product != blank %}
-          <div class="mini-cart-footer-promo">
-            {% assign promo_product = settings.mini_cart_promo_product %}
-            {% assign upsell = all_products['promo_product.handle'] %}
+      {% if settings.mini_cart_promo_product != blank %}
+        <div class="mini-cart-footer-promo">
+          {% assign promo_product = settings.mini_cart_promo_product %}
+          {% assign upsell = all_products['promo_product.handle'] %}
 
-            <picture>
-              <img src="{{ upsell.image[0].src | image_url: width: 360 }}" alt="{{ upsell.upsell_heading }}" width="360" height="360" loading="lazy">
-            </picture>
-            
-          </div>
-        {% endif %}
-
-      </div>
+          <picture>
+            <img src="{{ upsell.featured_image.src | image_url: width: 360 }}" alt="{{ upsell.upsell_heading }}" width="360" height="360" loading="lazy">
+          </picture>
+          
+        </div>
+      {% endif %}
 
     </div>
   </div>
