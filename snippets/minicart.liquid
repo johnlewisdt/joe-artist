@@ -17,7 +17,27 @@
       </mini-cart>
 
       <div class="drawer-footer mini-cart-footer">
-        Minicart Footer
+
+      <a href="/checkout" class="button button-full-width button-full-width hide-mini-cart-empty-js {% if cart.item_count == 0 %}hidden{% endif %}">{{ 'cart.general.checkout' | t }}</a>
+
+        {% if settings.mini_cart_promo_product != blank %}
+          <div class="mini-cart-footer-promo">
+            {% assign promo_product = settings.mini_cart_promo_product %}
+            {% assign upsell = all_products['promo_product.handle'] %}
+            {{ upsell | json }}
+           
+
+            <picture>
+              {% if settings.mini_cart_promo_image_mobile != blank %}
+                <source media="(max-width:749px)" srcset="{{ settings.mini_cart_promo_image_mobile | image_url: width: 360 }} 1x, {{ settings.mini_cart_promo_image_mobile | image_url: width: 720 }} 2x">
+              {% endif %}
+
+              <img src="{{ settings.mini_cart_promo_image | image_url: width: 360 }}" srcset="{{ settings.mini_cart_promo_image | image_url: width: 360 }} 1x, {{ settings.mini_cart_promo_image | image_url: width: 720 }} 2x" alt="{{ settings.mini_cart_promo_image }}" width="360" height="{{ 360 | divided_by: settings.mini_cart_promo_image.aspect_ratio | ceil }}" loading="lazy">
+            </picture>
+            
+          </div>
+        {% endif %}
+
       </div>
 
     </div>

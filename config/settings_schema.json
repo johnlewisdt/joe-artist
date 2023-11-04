@@ -1,3 +1,47 @@
 [
-
+  {
+    "name": "theme_info",
+    "theme_name": "JL JoeArtist",
+    "theme_author": "John Lewis",
+    "theme_version": "1.0.0",
+    "theme_documentation_url": "https://www.johnlewisdesign.com",
+    "theme_support_email": "info@johnlewisdesign.com"
+  },
+  {
+    "name": "Mini cart",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Mini cart title"
+      },
+      {
+        "type": "url",
+        "id": "continue_shopping_link",
+        "label": "Continue shopping link",
+        "info": "Enter your button text for Continue Shopping"
+      }
+    ]
+  },
+  {
+    "name": "Upsell",
+    "settings": [
+      {
+        "type": "product",
+        "id": "mini_cart_promo_product",
+        "label": "Upsell product"
+      },
+      {
+        "type": "text",
+        "id": "upsell_heading",
+        "label": "Upsell heading",
+        "info": "The heading to show on the upsell"
+      },
+      {
+        "type": "textarea",
+        "id": "upsell_text",
+        "label": "Upsell body",
+        "info": "The body text setion of the upsell"
+      }
+    ]
+  }
 ]

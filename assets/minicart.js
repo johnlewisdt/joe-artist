@@ -105,7 +105,7 @@ class Minicart extends HTMLElement {
     //get form elements and add event listeners
     this.minicartForm = this.querySelector('form');
     this.quantityInputs = this.minicartForm.querySelectorAll('.mini-cart-quantity-js');
-    this.quantityInputs.forEach(input => input.addEventListener('change', this.handleInputChange.bind(this, input)))
+    this.quantityInputs.forEach(input => input.addEventListener('change', this.handleInputChange.bind(this, input)));
   }
 
   updateCount(){
@@ -134,7 +134,7 @@ class Minicart extends HTMLElement {
 
   updateElements(){
     //hide and show elements depending on cart items
-    let hideWhenCartEmpty = document.querySelectorAll('.hide-mini-cart-empty-js')
+    let hideWhenCartEmpty = document.querySelectorAll('.hide-mini-cart-empty-js');
     let itemCount = parseFloat(document.getElementById('cart-item-count-hidden').querySelector('.mini-cart-item-count-js').innerHTML)
 
     if (hideWhenCartEmpty && itemCount >= 0) {

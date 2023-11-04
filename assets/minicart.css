@@ -51,6 +51,21 @@
   margin-bottom: 1.6rem;
 }
 
+.mini-cart-footer-promo {
+  margin-top: 1.6rem;
+  max-height: 20vh;
+}
+
+.mini-cart-footer-promo picture {
+  display: flex;
+  width: 100%;
+}
+
+.mini-cart-footer-promo img {
+  width: 100%;
+  height: auto;
+}
+
 .mini-cart-empty {
   font-size: 4rem;
   line-height: 4.8rem;
