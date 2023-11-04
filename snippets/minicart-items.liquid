@@ -1,0 +1,50 @@
+<h4 class="mini-cart-item-count-js">{{ cart.item_count }} Items | Subtotal: {{ cart.total_price | money }}</h4>
+<form action="{{ routes.cart_url }}" method="post" id="mini-cart">
+  <div class="mini-cart-form-items" data-id="{{ section.id }}">
+    {%- if cart != empty -%}
+      {%- for item in cart.items -%}
+        <div class="mini-cart-item" id="MiniCartItem-{{ item.index | plus: 1 }}">
+          <div class="mini-cart-item-media">
+            {% if item.image %}
+              <a href="{{ item.url }}" class="mini-cart-item-link" aria-hidden="true" tabindex="-1">
+                <img src="{{ item.image | image_url: width: 160, height: 160, crop: 'center' }}"
+                  class="mini-cart-item-image"
+                  alt="{{ item.image.alt | escape }}"
+                  loading="lazy"
+                  width="160"
+                  height="160"
+                >
+              </a>
+            {% endif %}
+          </div>
+
+          <div class="mini-cart-item-details">
+            <h4 class="mini-cart-item-name">{{ item.product.title | escape }}</h4>
+            <h5 class="mini-cart-item-price">{{ item.price | money }}</h5>
+            <div class="mini-cart-item-quantity-wrapper">
+              <quantity-input class="quantity">
+                <p>{{ 'products.product.quantity.label' | t }}
+                  <input class="quantity-input mini-cart-quantity-js"
+                    type="number"
+                    name="updates[{{ item.key }}]"
+                    value="{{ item.quantity }}"
+                    aria-label="{{ 'products.product.quantity.label' | t: product: item.product.title | escape }}"
+                    id="Quantity-{{ item.index | plus: 1 }}"
+                    data-index="{{ item.index | plus: 1 }}"
+                    data-key="{{ item.key }}"
+                  >
+                </p>
+              </quantity-input>
+            </div>
+          </div>
+
+        </div>
+      {%- endfor -%}
+    {%- else -%}
+      <div class="mini-cart-empty">
+        <p>{{ 'cart.general.empty' | t }}</p>
+      </div>
+      <side-drawer-toggle class="button button--full-width" data-drawer="drawer-mini-cart">{{ 'cart.general.continue_shopping' | t }}</side-drawer-toggle>
+    {%- endif -%}
+  </div>
+</form>
