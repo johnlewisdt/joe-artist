@@ -8,7 +8,11 @@
       </side-drawer-toggle>
 
       <mini-cart class="drawer-content mini-cart mini-cart-items-js">
-        {% render 'minicart-items' %}
+        {% render 'icon-loading-overlay-spinner' %}
+  
+        <div class="mini-cart-items mini-cart-items-js">
+          {% render 'minicart-items' %}
+        </div>
       </mini-cart>
 
     </div>
