@@ -29,3 +29,43 @@
   visibility: visible;
   right: 0;
 }
+
+/* Header */
+.drawer-header {
+  padding: 2rem 2rem 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: "Bona Nova", serif;
+  font-weight: 700;
+  font-size: 2.4rem;
+  letter-spacing: -0.1px;
+}
+
+.drawer-header side-drawer-toggle {
+  height: 3.8rem;
+}
+
+.drawer-header-icon {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.drawer-title {
+  display: block;
+  font-family: "Bona Nova", serif;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 700;
+  margin: 0 2rem 2rem;
+}
+
+.drawer-header .drawer-title {
+  margin-left: 0;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  margin-right: 12.66rem;
+}
