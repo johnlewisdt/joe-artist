@@ -33,10 +33,11 @@
     {{ content_for_header }}
 
     {{ 'reset.css' | asset_url | stylesheet_tag }}
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+    {{ 'quantity.css' | asset_url | stylesheet_tag }}
+    {{ 'loading-overlay.css' | asset_url | stylesheet_tag }}
     {{ 'minicart.css' | asset_url | stylesheet_tag }}
     {{ 'side-drawer.css' | asset_url | stylesheet_tag }}
-    {{ 'loading-overlay.css' | asset_url | stylesheet_tag }}
-    {{ 'theme.css' | asset_url | stylesheet_tag }}
   </head>
   <body>
     {% section 'header' %}
