@@ -24,15 +24,9 @@
           <div class="mini-cart-footer-promo">
             {% assign promo_product = settings.mini_cart_promo_product %}
             {% assign upsell = all_products['promo_product.handle'] %}
-            {{ upsell | json }}
-           
 
             <picture>
-              {% if settings.mini_cart_promo_image_mobile != blank %}
-                <source media="(max-width:749px)" srcset="{{ settings.mini_cart_promo_image_mobile | image_url: width: 360 }} 1x, {{ settings.mini_cart_promo_image_mobile | image_url: width: 720 }} 2x">
-              {% endif %}
-
-              <img src="{{ settings.mini_cart_promo_image | image_url: width: 360 }}" srcset="{{ settings.mini_cart_promo_image | image_url: width: 360 }} 1x, {{ settings.mini_cart_promo_image | image_url: width: 720 }} 2x" alt="{{ settings.mini_cart_promo_image }}" width="360" height="{{ 360 | divided_by: settings.mini_cart_promo_image.aspect_ratio | ceil }}" loading="lazy">
+              <img src="{{ upsell.image[0].src | image_url: width: 360 }}" alt="{{ upsell.upsell_heading }}" width="360" height="360" loading="lazy">
             </picture>
             
           </div>

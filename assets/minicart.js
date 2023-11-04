@@ -127,7 +127,7 @@ class Minicart extends HTMLElement {
 
     if (totalElements && cartTotal) {
       totalElements.forEach(el => {
-        el.innerHTML = cartTotal.innerHTML
+        el.innerHTML = cartTotal.innerHTML;
       })
     }
   }
@@ -135,14 +135,14 @@ class Minicart extends HTMLElement {
   updateElements(){
     //hide and show elements depending on cart items
     let hideWhenCartEmpty = document.querySelectorAll('.hide-mini-cart-empty-js');
-    let itemCount = parseFloat(document.getElementById('cart-item-count-hidden').querySelector('.mini-cart-item-count-js').innerHTML)
+    let itemCount = parseFloat(document.getElementById('cart-item-count-hidden').querySelector('.mini-cart-item-count-js').innerHTML);
 
     if (hideWhenCartEmpty && itemCount >= 0) {
       hideWhenCartEmpty.forEach(el => {
         if (itemCount > 0) {
-          el.classList.remove('hidden')
+          el.classList.remove('hidden');
         } else {
-          el.classList.add('hidden')
+          el.classList.add('hidden');
         }
       })
     }

@@ -5,7 +5,7 @@ class QuantityInput extends HTMLElement {
     this.changeEvent = new Event('change', { bubbles: true });
 
     this.querySelectorAll('button').forEach(
-      (button) => button.addEventListener('click', this.onButtonClick.bind(this))
+      (button) => button.addEventListener('click', this.onButtonClick.bind(this));
     );
   }
 
