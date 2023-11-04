@@ -1,0 +1,10 @@
+{
+  "products": {
+    "product": {
+      "quantity": {
+        "label": "Quantity",
+        "label_short": "Qty"
+      }
+    }
+  }
+}
