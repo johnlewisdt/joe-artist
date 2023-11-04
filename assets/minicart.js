@@ -18,6 +18,21 @@ class Minicart extends HTMLElement {
     this.quantityInputs.forEach(input => input.addEventListener('change', this.handleInputChange.bind(this, input)))
   }
 
+  updateCount(){
+    //updates cart counter
+    let itemCount = document.getElementById('cart-item-count-hidden');
+    let countElements = document.querySelectorAll('.mini-cart-count-js');
+    console.log("count elements set")
+
+    if (itemCount && countElements) {
+      countElements.forEach(el => {
+        el.innerHTML = itemCount.innerHTML
+            console.log("count triggered")
+
+      })
+    }
+  }
+
 }
 
 customElements.define('mini-cart', Minicart);
