@@ -30,6 +30,18 @@ class Minicart extends HTMLElement {
     }
   }
 
+  updateTotal(){
+    //updates cart total
+    let totalElements = document.querySelectorAll('.mini-cart-total-js');
+    let cartTotal = document.getElementById('cart-total-hidden');
+
+    if (totalElements && cartTotal) {
+      totalElements.forEach(el => {
+        el.innerHTML = cartTotal.innerHTML
+      })
+    }
+  }
+
 }
 
 customElements.define('mini-cart', Minicart);
