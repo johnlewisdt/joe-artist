@@ -1,4 +1,15 @@
 {
+  "general": {
+    "404": {
+      "title": "Not found",
+      "subtext_html": "The page you were looking for does not exist"
+    }
+  },
+  "sections": {
+    "header": {
+      "cart_count": "Items"
+    }
+  },
   "products": {
     "product": {
       "quantity": {
