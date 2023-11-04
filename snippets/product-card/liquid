@@ -1,0 +1,49 @@
+<div class="product-card">
+  {% assign product_form_id = 'quick-add-' | append: section_id | append: featured_product.id %}
+    {% if featured_product.featured_image %}
+      <img src="{{ featured_product.featured_image | img_url: 'medium' }}" height="300" width="300" alt="{{ featured_product.featured_image.alt }}">
+    {% else %}
+      {{ 'product-1' | placeholder_svg_tag: '' }}
+    {% endif %}
+  <div class="product-info text-center product-form_buttons">
+    <div class="product-text">
+      <h4>
+        {{ featured_product.title }}
+      </h4>
+      <p class="product-price">
+        {{ featured_product.price | money }}
+      </p>
+    </div>
+    <product-form class="product-form" data-productid="{{ featured_product.selected_or_first_available_variant.id }}">
+      <div class="product-form-error-message-wrapper" role="alert" hidden>
+        <span class="product-form-error-message"></span>
+      </div>
+    
+      {%- form 'product', featured_product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form', data-productid: featured_product.id -%}
+
+        <input type="hidden" name="id" value="{{ featured_product.selected_or_first_available_variant.id }}" data-productid="{{ featured_product.id }}">
+      
+        <div class="product-form-buttons" id="product-form-buttons-{{ section.id }}">
+          <button
+            type="submit"
+            name="add"
+            class="product-form-submit button"
+          {% if featured_product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+          >
+            <span>
+              {%- if featured_product.selected_or_first_available_variant.available -%}
+                {{ 'cart.general.add_to_cart' | t }}
+              {%- else -%}
+                {%- if section.settings.coming_soon == true -%}
+                  {{ 'cart.general.coming_soon' | t }}
+                {%- else -%}
+                  {{ 'cart.general.sold_out' | t }}
+                {%- endif -%}
+              {%- endif -%}
+            </span>
+          </button>
+        </div>
+      {%- endform -%}
+    </product-form>
+  </div>
+</div>
