@@ -1,3 +1,10 @@
+<span class="cart-count hidden" id="cart-item-count-hidden">
+  <span class="mini-cart-item-count-js">{{ cart.item_count }}</span>
+  <span class="hidden" id="cart-total-hidden">
+    {{ cart.total_price | money }}
+  </span>
+</span>
+
 <h4 class="mini-cart-item-count-js">{{ cart.item_count }} Items | Subtotal: {{ cart.total_price | money }}</h4>
 <form action="{{ routes.cart_url }}" method="post" id="mini-cart">
   <div class="mini-cart-form-items" data-id="{{ section.id }}">
