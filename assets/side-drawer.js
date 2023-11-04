@@ -13,6 +13,10 @@ class SideDrawer extends HTMLElement {
       }
     })
 
+    //Key up and body click events
+    this.addEventListener('keyup', (evt) => evt.code === 'Escape' && this.close());
+    this.onBodyClick = this.handleBodyClick.bind(this); 
+
   }
 
   //Open drawer
@@ -31,6 +35,14 @@ class SideDrawer extends HTMLElement {
     this.classList.remove('active');
 
     document.body.removeEventListener('click', this.onBodyClick, {passive: true});
+  }
+
+  //Body click event to close drawer
+  handleBodyClick(evt) {
+    const target = evt.target;
+    if (target !== this && !target.closest('side-drawer') && !target.closest('side-drawer-toggle')) {
+      this.close();
+    }
   }
   
 }
