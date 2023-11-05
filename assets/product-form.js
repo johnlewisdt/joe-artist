@@ -44,7 +44,6 @@ class ProductForm extends HTMLElement {
 
       const event = new Event('mini-cart-open');
       document.dispatchEvent(event);
-      console.log('event dispatched')
     });
 
     function fetchConfig(type = 'json') {
