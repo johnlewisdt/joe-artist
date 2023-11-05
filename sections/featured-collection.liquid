@@ -1,4 +1,4 @@
-<h2 id="featured_collection" class="text-center">{{ section.settings.title }}</h2>
+<h2 id="featured_collection-{{ section.id }}" class="text-center">{{ section.settings.title }}</h2>
 <div class="featured-collection">
   {% for product in section.settings.featured_collection.products limit: section.settings.number_of_products_to_show %}
     <div class="collection-product">

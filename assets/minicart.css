@@ -104,15 +104,17 @@
 
 .product-upsell {
   display: flex;
-  padding: 0;
+  padding: 0.5rem 0 0;
 }
 
-.product-price > s {
+.product-price > s,
+.mini-cart-item-price > s {
   color: #ccc;
   margin-right: 0.5rem;
 }
 
-.product-price > .offer-price {
+.product-price > .offer-price,
+.mini-cart-item-price > .offer-price {
   color: #17d1ea;
 }
 

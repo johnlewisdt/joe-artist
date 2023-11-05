@@ -27,7 +27,13 @@
 
           <div class="mini-cart-item-details">
             <h4 class="mini-cart-item-name">{{ item.product.title | escape }}</h4>
-            <h5 class="mini-cart-item-price">{{ item.price | money }}</h5>
+            <h5 class="mini-cart-item-price">
+              {% if item.product.compare_at_price %}
+                <s>{{ item.product.compare_at_price | money }}</s><span class="offer-price">{{ item.product.price | money }}</span>
+              {% else %}
+                {{ item.product.price | money }}
+              {% endif %}
+            </h5>
             <div class="mini-cart-item-quantity-wrapper">
               <quantity-input class="quantity">
                 <p>{{ 'products.product.quantity.label' | t }}
