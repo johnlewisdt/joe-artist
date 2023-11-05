@@ -1,5 +1,25 @@
 {
   "current": {
+    "mini_cart_promo_product": "joes-promo-deal",
+    "upsell_heading": "Need more?",
+    "upsell_text": "Buy any item and get the Planet Promo for just £10. \n<small>for a limited time only<\/small>",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "menu": "main-menu"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "footer_text": "&copy; John Lewis 2023"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Default": {
