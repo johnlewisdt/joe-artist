@@ -16,9 +16,13 @@
       <p class="upsell-description">
         {{ settings.upsell_text }}
       </p>
-      <p class="product-price">
-        {{ upsell.price | money }}
-      </p>
+      <h5 class="product-price">
+        {% if upsell.compare_at_price %}
+          <s>{{ upsell.compare_at_price | money }}</s><span class="offer-price">{{ upsell.price | money }}</span>
+        {% else %}
+          {{ upsell.price | money }}
+        {% endif %}
+      </h5>
     </div>
   </div>
 </div>

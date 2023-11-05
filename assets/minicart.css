@@ -1,6 +1,6 @@
 .mini-cart.drawer-content {
   padding-top: 0;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .mini-cart-items {
@@ -105,6 +105,15 @@
 .product-upsell {
   display: flex;
   padding: 0;
+}
+
+.product-price > s {
+  color: #ccc;
+  margin-right: 0.5rem;
+}
+
+.product-price > .offer-price {
+  color: #17d1ea;
 }
 
 .upsell-image {

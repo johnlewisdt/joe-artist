@@ -10,9 +10,13 @@
       <h4>
         {{ featured_product.title }}
       </h4>
-      <p class="product-price">
-        {{ featured_product.price | money }}
-      </p>
+      <h5 class="product-price">
+        {% if featured_product.compare_at_price %}
+          <s>{{ featured_product.compare_at_price | money }}</s><span class="offer-price">{{ featured_product.price | money }}</span>
+        {% else %}
+          {{ featured_product.price | money }}
+        {% endif %}
+      </h5>
     </div>
     <product-form class="product-form" data-productid="{{ featured_product.selected_or_first_available_variant.id }}">
       <div class="product-form-error-message-wrapper" role="alert" hidden>
