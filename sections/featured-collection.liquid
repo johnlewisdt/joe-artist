@@ -1,4 +1,4 @@
-<h2 id="featured_collection-{{ section.id }}" class="text-center">{{ section.settings.title }}</h2>
+<h2 id="{{ section.settings.anchor }}" class="text-center">{{ section.settings.title }}</h2>
 <div class="featured-collection">
   {% for product in section.settings.featured_collection.products limit: section.settings.number_of_products_to_show %}
     <div class="collection-product">
@@ -32,6 +32,13 @@
       "max": 12,
       "default": 4,
       "label": "Number of products to show"
+    },
+    {
+      "type": "text",
+      "id": "anchor",
+      "default": "featured_products",
+      "label": "Anchor link",
+      "info": "Use this to add a custom anchor link. If using more than once on a page, use a customised link here."
     }
   ],
   "presets": [

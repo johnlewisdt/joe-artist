@@ -1,0 +1,50 @@
+<div class="hero-product-card">
+  {% assign product_form_id = 'quick-add-' | append: section_id | append: featured_product.id %}
+  <div class="product-info text-center product-form_buttons">
+    <product-form class="product-form" data-productid="{{ featured_product.selected_or_first_available_variant.id }}">
+      <div class="product-form-error-message-wrapper" role="alert" hidden>
+        <span class="product-form-error-message"></span>
+      </div>
+      <div class="content-grid">
+        {%- form 'product', 
+          featured_product, id: product_form_id, 
+          class: 'form', 
+          novalidate: 'novalidate', 
+          data-type: 'add-to-cart-form', 
+          data-productid: featured_product.id 
+          -%}
+          <div class="product">
+            {% if featured_product.featured_image %}
+              <img src="{{ featured_product.featured_image | img_url: 'medium' }}" height="300" width="300" alt="{{ featured_product.featured_image.alt }}">
+            {% else %}
+              {{ 'product-1' | placeholder_svg_tag: '' }}
+            {% endif %}
+
+          </div>
+          <div class="content">
+            <h1>{{ section.settings.hero_heading }}</h1>
+            <p>{{ section.settings.hero_body }}</p>
+            <div class="product-form-buttons" id="product-form-buttons-{{ section.id }}">
+              <button
+                type="submit"
+                name="add"
+                class="product-form-submit button"
+              {% if featured_product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+              >
+                <span>
+                  {%- if featured_product.selected_or_first_available_variant.available -%}
+                    {{ 'cart.general.add_to_cart' | t }}
+                  {%- else -%}
+                    {{ 'cart.general.sold_out' | t }}
+                  {%- endif -%}
+                </span>
+              </button>
+            </div>
+          </div>
+          <input type="hidden" name="id" value="{{ featured_product.selected_or_first_available_variant.id }}" data-productid="{{ featured_product.id }}">
+          {%- endform -%}
+      </div>
+    </product-form>
+  </div>
+</div>
+
