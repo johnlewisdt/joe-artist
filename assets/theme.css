@@ -238,6 +238,13 @@ section {
   background-position: center;
 }
 
+.hero-image {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
 footer {
   padding: 20px 0;
   text-align: center;
@@ -295,7 +302,10 @@ footer a {
   margin: auto;
 }
 
-.visually-hidden,
+.visually-hidden {
+  visibility: hidden;
+}
+
 .hidden {
   display: none;
 }
