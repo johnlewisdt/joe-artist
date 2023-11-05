@@ -41,6 +41,12 @@
         "id": "upsell_text",
         "label": "Upsell body",
         "info": "The body text setion of the upsell"
+      },
+      {
+        "type": "product",
+        "id": "mini_cart_qualifier_product",
+        "label": "Qualifier product",
+        "info": "Only show upsell if this product is in the cart (default: shows upsell without qualifier)."
       }
     ]
   }
