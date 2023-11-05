@@ -1,6 +1,7 @@
 .mini-cart.drawer-content {
   padding-top: 0;
   overflow-y: auto;
+  min-height: 33vh;
 }
 
 .mini-cart-items {
@@ -17,7 +18,7 @@
 }
 
 .mini-cart-item-media img {
-  width: 100px;
+  width: 80px;
   height: auto;
 }
 
@@ -81,11 +82,6 @@
 .mini-cart-footer-promo {
   margin-top: 1.6rem;
   max-height: 20vh;
-}
-
-.mini-cart-footer-promo picture {
-  display: flex;
-  width: 100%;
 }
 
 .mini-cart-footer-promo img {

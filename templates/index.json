@@ -3,11 +3,11 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "hero_title": "Joe Live and Direct",
-        "hero_text": "THE INCREDIBLE DEBUT ALBUM",
-        "hero_cta_label": "BUY NOW",
-        "hero_cta_link": "#",
-        "hero_image": "shopify:\/\/shop_images\/pexels-edward-eyer-811838.jpg"
+        "hero_image": "shopify:\/\/shop_images\/joe-artist-hero-image-opt.webp",
+        "hero_heading": "JOE LIVE AND DIRECT",
+        "hero_body": "GRAB JOE’S LATEST INCREDIBLE LIVE ALBUM FOR JUST £10",
+        "hero_product": "joes-album",
+        "show_hero_product": true
       }
     },
     "intro-section": {

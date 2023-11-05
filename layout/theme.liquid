@@ -31,21 +31,18 @@
     {% render 'meta-tags' %}
     
     {{ content_for_header }}
-
-    {{ 'reset.css' | asset_url | stylesheet_tag }}
-    {{ 'theme.css' | asset_url | stylesheet_tag }}
-    {{ 'quantity.css' | asset_url | stylesheet_tag }}
-    {{ 'loading-overlay.css' | asset_url | stylesheet_tag }}
-    {{ 'minicart.css' | asset_url | stylesheet_tag }}
-    {{ 'side-drawer.css' | asset_url | stylesheet_tag }}
+  
+    {% render 'global-css' %}
+    {% render 'inline-css' %}
   </head>
   <body>
     {% section 'header' %}
     <main id="main" class="main" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
+
     {% section 'footer' %}
-    <script src="{{ 'index.js' | asset_url }}" defer="defer"></script>
+    
     <script src="{{ 'minicart.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'quantity.js' | asset_url }}" defer="defer"></script>

@@ -1,7 +1,20 @@
 <div class="hero">
   {% if section.settings.hero_image %}
     <picture>
-      <img class="hero-image" src="{{section.settings.hero_image | image_url }}">
+      <img class="hero-image"
+        src="
+        {{ section.settings.hero_image |
+          image_url: width: 1512 | 
+          image_tag: sizes: 
+            '(min-width:1600px) 960px, (min-width: 768px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem), (max-width: 375px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)' 
+        }}" 
+        data-src="{{ section.settings.hero_image | image_url }}"
+        data-widths="[375, 768, 960, 1080, 1296, 1512, 1728, 1944, 2048]"
+        data-aspectratio="auto"
+        data-sizes="auto"
+        data-parent-fit="cover"
+        alt="{{ image.alt }}" 
+      />
     </picture>
   {% endif %}
 </div>
@@ -32,7 +45,7 @@
         "type": "checkbox",
         "id": "show_hero_product",
         "label": "Show hero product?",
-        "default": "true"
+        "default": true
       }            
     ],
     "presets": [
