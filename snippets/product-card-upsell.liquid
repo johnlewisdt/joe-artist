@@ -1,0 +1,51 @@
+<h3 class="upsell-heading">
+  {{ settings.upsell_heading }}
+</h3>
+<div class="product-card product-upsell">
+{% assign product_form_id = 'quick-add-' | append: section_id | append: upsell.id %}
+  <div class="upsell-image">
+  {% if upsell.featured_image %}
+    <img src="{{ upsell.featured_image | img_url: 'medium' }}" height="300" width="300" alt="{{ upsell.featured_image.alt }}">
+  {% else %}
+    {{ 'product-1' | placeholder_svg_tag: '' }}
+  {% endif %}
+  </div>
+  <div class="product-info text-left product-form_buttons">
+    <div class="product-upsell-description">
+      
+      <p class="upsell-description">
+        {{ settings.upsell_text }}
+      </p>
+      <p class="product-price">
+        {{ upsell.price | money }}
+      </p>
+    </div>
+  </div>
+</div>
+<product-form class="product-form" data-productid="{{ upsell.selected_or_first_available_variant.id }}">
+      <div class="product-form-error-message-wrapper" role="alert" hidden>
+        <span class="product-form-error-message"></span>
+      </div>
+    
+      {%- form 'product', upsell, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form', data-productid: upsell.id -%}
+
+        <input type="hidden" name="id" value="{{ upsell.selected_or_first_available_variant.id }}" data-productid="{{ upsell.id }}">
+      
+        <div class="product-form-buttons" id="product-form-buttons-{{ section.id }}">
+          <button
+            type="submit"
+            name="add"
+            class="product-form-submit button upsell-button"
+          {% if upsell.selected_or_first_available_variant.available == false %}disabled{% endif %}
+          >
+            <span>
+              {%- if upsell.selected_or_first_available_variant.available -%}
+                {{ 'cart.general.add_to_cart' | t }}
+              {%- else -%}
+                {{ 'cart.general.sold_out' | t }}
+              {%- endif -%}
+            </span>
+          </button>
+        </div>
+      {%- endform -%}
+    </product-form>

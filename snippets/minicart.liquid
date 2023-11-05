@@ -18,17 +18,13 @@
 
     <div class="drawer-footer mini-cart-footer">
 
-      <a href="/checkout" class="button button-full-width button-full-width hide-mini-cart-empty-js {% if cart.item_count == 0 %}hidden{% endif %}">{{ 'cart.general.checkout' | t }}</a>
-      settings: {{ settings.mini_cart_promo_product }}
+      <a href="/checkout" class="button button-full-width hide-mini-cart-empty-js {% if cart.item_count == 0 %}hidden{% endif %}">{{ 'cart.general.checkout' | t }}</a>
       {% if settings.mini_cart_promo_product != blank %}
         <div class="mini-cart-footer-promo">
           {% assign promo_product = settings.mini_cart_promo_product %}
-          {% assign upsell = all_products['promo_product.handle'] %}
+          {% assign upsell = all_products[promo_product.handle] %}
 
-          <picture>
-            <img src="{{ upsell.images[0].src | image_url: width: 360 }}" alt="{{ upsell.upsell_heading }}" width="360" height="360" loading="lazy">
-          </picture>
-          
+         {% render 'product-card-upsell', upsell: upsell %}
         </div>
       {% endif %}
 

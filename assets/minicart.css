@@ -1,5 +1,6 @@
 .mini-cart.drawer-content {
   padding-top: 0;
+  overflow-y: scroll;
 }
 
 .mini-cart-items {
@@ -69,6 +70,10 @@
   visibility: visible;
 }
 
+.mini-cart-footer {
+  min-height: 38vh;
+}
+
 .mini-cart-footer .button:not(:last-of-type) {
   margin-bottom: 1.6rem;
 }
@@ -95,4 +100,27 @@
   letter-spacing: -0.5px;
   text-transform: uppercase;
   padding: 0 2rem;
+}
+
+.product-upsell {
+  display: flex;
+  padding: 0;
+}
+
+.upsell-image {
+  margin-right: 2rem;
+}
+
+.upsell-heading {
+  color: #17d1ea;
+}
+
+.upsell-description {
+  color: #17d1ea;
+}
+
+.upsell-button {
+  display: block;
+  min-width: 100%;
+  margin-top: 2rem;
 }
