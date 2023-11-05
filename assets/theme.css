@@ -356,7 +356,7 @@ p {
   }
   .featured-collection {
     grid-template-columns: 2fr 2fr;
-    padding: 2rem;
+    padding: 1rem;
   }
   .product-card {
     padding: 0.5rem;
