@@ -4,10 +4,17 @@
       {% if section.settings.hero_image %}
         <picture>
           <img 
-          class="hero-image"
+          class="hero-image hide-on-mobile"
           alt="{{ image.alt }}"
+          loading="lazy"
           src="{{ section.settings.hero_image | image_url: width: '1512' }}"
-          srcset="{{ section.settings.hero_image | image_url: width: '1512' | sizes: '(min-width:1600px) 960px, (min-width: 768px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem), (max-width: 375px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)' }}" />
+          srcset="{{ section.settings.hero_image | image_url: width: '1512' | sizes: '(min-width:1600px) 960px, (min-width: 768px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)' }}" />
+          <img 
+          class="hero-image hide-on-desktop"
+          loading="eager"
+          alt="{{ image.alt }}"
+          src="{{ section.settings.hero_image | image_url: width: '375' }}"
+          srcset="{{ section.settings.hero_image | image_url: width: '375' }}" />
         </picture>
       {% endif %}
     </div>

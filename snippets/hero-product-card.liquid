@@ -15,7 +15,7 @@
           -%}
           <div class="product">
             {% if featured_product.featured_image %}
-              <img src="{{ featured_product.featured_image | img_url: 'medium' }}" height="300" width="300" alt="{{ featured_product.featured_image.alt }}">
+              <img src="{{ featured_product.featured_image | img_url: '300x300' }}" height="300" width="300" alt="{{ featured_product.featured_image.alt }}">
             {% else %}
               {{ 'product-1' | placeholder_svg_tag: '' }}
             {% endif %}

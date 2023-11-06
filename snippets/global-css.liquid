@@ -551,4 +551,25 @@
       padding: 2rem 0;
     }
   }
+
+  /* responsive visibility */
+  @media screen and (min-width: 550px) {
+    .hide-on-desktop {
+      display: none;
+    }
+
+    .hide-on-mobile {
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    .hide-on-desktop {
+      display: block;
+    }
+
+    .hide-on-mobile {
+      display: none;
+    }
+  }
 {% endstyle %}
