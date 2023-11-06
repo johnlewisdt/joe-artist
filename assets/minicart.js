@@ -1,3 +1,13 @@
+class MinicartRemoveButton extends HTMLElement {
+  constructor() {
+    super();
+
+
+  }
+}
+
+customElements.define('mini-cart-remove', MinicartRemoveButton);    
+
 class Minicart extends HTMLElement {
   constructor() {
     super();
