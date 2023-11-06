@@ -26,6 +26,11 @@
           </div>
 
           <div class="mini-cart-item-details">
+            <mini-cart-remove>
+              <button>
+                {% render 'icon-close' %}
+              </button>
+            </mini-cart-remove>
             <h4 class="mini-cart-item-name">{{ item.product.title | escape }}</h4>
             <h5 class="mini-cart-item-price">
               {% if item.product.compare_at_price %}

@@ -1,14 +1,4 @@
-class MinicartRemoveButton extends HTMLElement {
-  constructor() {
-    super();
-
-
-  }
-}
-
-customElements.define('mini-cart-remove', MinicartRemoveButton);    
-
-class Minicart extends HTMLElement {
+ class Minicart extends HTMLElement {
   constructor() {
     super();
 
@@ -162,3 +152,22 @@ class Minicart extends HTMLElement {
 }
 
 customElements.define('mini-cart', Minicart);
+
+class MinicartRemoveButton extends HTMLElement {
+  constructor() {
+    super();
+
+    this.miniCartForm = this.closest("form#mini-cart");
+    this.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      this.miniCartForm.classList.add('loading');
+      const qty = this.parentElement.querySelector('quantity-input input');
+      qty.value = 0;
+      const event = new Event('change');
+      qty.dispatchEvent(event);
+    });
+
+  }
+}
+
+customElements.define('mini-cart-remove', MinicartRemoveButton);   
