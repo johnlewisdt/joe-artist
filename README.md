@@ -8,7 +8,8 @@ In Theme Settings, An upsell product is selectable, as well as override text. A 
 
 # Simple cart
 
-The Cart (and all other script) was written in Vanilla Javascript, utilising the Webcomponent format. All CSS and JS are passed as partials, to keep to 2.0 best practices. Event listeners look for Cart changes, sending all requests to the API as necessary and rendering with the Section Rendering API. Reducing the product quantity to zero in the Quantity field removes that Line Item from the Cart.
+The Cart (and all other script) was written in Vanilla Javascript, utilising the Webcomponent format. All CSS and JS are passed as partials, to keep to 2.0 best practices. Event listeners look for Cart changes, sending all requests to the API as necessary and rendering with the Section Rendering API. Each Cart Line Item is removable by button. Additionally, reducing the product quantity to zero in the Quantity field removes 
+its Line Item from the Cart.
 
 ## Add to Cart
 
