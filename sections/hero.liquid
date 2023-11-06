@@ -36,7 +36,17 @@
           </div>
         </div>
       {% endif %}
-      </div>
+      {% if section.settings.show_callouts == true %}
+        <div class="callouts-grid hide-on-mobile">
+          {% for block in section.blocks %}
+            <div class="callout-{{ forloop.index }}">
+              {% render 'rating-stars', block: block %}
+              <h3 class="text-center">{{ block.settings.callout_text}}</h3>
+              <h4 class="text-center">{{ block.settings.callout_subtext}}</h4>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
     </div>
   </div>
 </div>
@@ -53,7 +63,8 @@
         "type": "text",
         "id": "hero_heading",
         "label": "Hero Heading"
-      }, {
+      },
+      {
         "type": "textarea",
         "id": "hero_body",
         "label": "Hero Body Copy"
@@ -68,7 +79,39 @@
         "id": "show_hero_product",
         "label": "Show hero product?",
         "default": true
-      }            
+      },      
+      {
+        "type": "checkbox",
+        "id": "show_callouts",
+        "label": "Show callouts?",
+        "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "type": "review",
+        "name": "Review",
+        "settings": [
+          {
+            "type": "text",
+            "id": "callout_text",
+            "label": "Callout Text"
+          },
+          {
+            "type": "text",
+            "id": "callout_subtext",
+            "label": "Callout Subtext"
+          },
+          {
+            "type": "range",
+            "id": "callout_stars",
+            "min": 1,
+            "max": 5,
+            "default": 5,
+            "label": "Star rating (1-5)"
+          }
+        ]
+      }
     ],
     "presets": [
       {
