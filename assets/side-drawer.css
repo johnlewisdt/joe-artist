@@ -49,6 +49,16 @@
   height: 3.8rem;
 }
 
+side-drawer-toggle.button {
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  display: block;
+  padding: 1rem 0;
+  border: 1px solid #444;
+  border-radius: 4px;
+}
+
 .drawer-header-icon {
   display: flex;
   align-items: center;

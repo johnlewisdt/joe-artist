@@ -5,7 +5,7 @@
       "settings": {
         "hero_image": "shopify:\/\/shop_images\/joe-artist-hero-image-opt.webp",
         "hero_heading": "JOE LIVE AND DIRECT",
-        "hero_body": "GRAB JOE’S LATEST INCREDIBLE LIVE ALBUM FOR JUST £10",
+        "hero_body": "Grab Joe’s latest incredible Live And Direct album for just £14.99.<br>For a limited time only, this unlocks a secret EP deal!",
         "hero_product": "joes-album",
         "show_hero_product": true
       }
@@ -22,7 +22,8 @@
       "settings": {
         "title": "Featured Collection",
         "featured_collection": "joe-music",
-        "number_of_products_to_show": 4
+        "number_of_products_to_show": 4,
+        "anchor": "featured_products"
       }
     }
   },
