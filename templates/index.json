@@ -2,12 +2,35 @@
   "sections": {
     "hero": {
       "type": "hero",
+      "blocks": {
+        "132bb006-50da-47de-b678-505bca9de082": {
+          "type": "review",
+          "settings": {
+            "callout_text": "Not your average Joe",
+            "callout_subtext": "Billboard Magazine",
+            "callout_stars": 5
+          }
+        },
+        "dbb3e088-d806-41d8-8826-2cecaa90e31e": {
+          "type": "review",
+          "settings": {
+            "callout_text": "Mesmerizing",
+            "callout_subtext": "Timeout",
+            "callout_stars": 4
+          }
+        }
+      },
+      "block_order": [
+        "132bb006-50da-47de-b678-505bca9de082",
+        "dbb3e088-d806-41d8-8826-2cecaa90e31e"
+      ],
       "settings": {
         "hero_image": "shopify:\/\/shop_images\/joe-artist-hero-image-opt.webp",
         "hero_heading": "JOE LIVE AND DIRECT",
         "hero_body": "Grab Joe’s latest incredible Live And Direct album for just £14.99.<br>For a limited time only, this unlocks a secret EP deal!",
         "hero_product": "joes-album",
-        "show_hero_product": true
+        "show_hero_product": true,
+        "show_callouts": true
       }
     },
     "intro-section": {

@@ -1,0 +1,9 @@
+{% assign rating = block.settings.callout_stars %}
+{% assign counter = rating | times: 1 %}
+<div class="rating-stars-container">
+  <div class="rating-stars">
+    {% for i in (1..counter) %}
+      {% render 'icon-star' %}
+    {% endfor %}
+  </div>
+</div>
