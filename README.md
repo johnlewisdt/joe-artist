@@ -1,10 +1,10 @@
 # John's Lookbook assessment for UMG
 
-Hi! Here's the repo for the UMG assessment as per the supplied requirements. This has been written for performance - so feel free use Chrome's Incognito Mode to run some tests in Lighthouse :)
+Hi! Here's the repo for the UMG assessment as per the supplied requirements. This has been written for performance - so feel free to use Chrome's Incognito Mode to run some tests in Lighthouse :)
 
 # Conditional Upsell
 
-In Theme Settings, An upsell product is selectable, as well as override text. A second product input lets you specify the qualifier. If this is not set, no upsell shows. If  it's set, then the upsell will only show when the qualifier is added to the Cart. Liquid controls the upsell logic, as per OS2.0 style; we only use JavaScript when absolutely necessary. 
+In Theme Settings, An upsell product is selectable, as well as override text. A second product input lets you specify the qualifier. If this is not set, no upsell shows. If  it's set, then the upsell will only show when the qualifier is added to the Cart. Liquid controls the upsell logic, as per OS2.0 style; we only use JavaScript when absolutely necessary. On the demo store, the qualifiying product is set as `Joe's Album`. Adding this product will trigger the conditional upsell.
 
 # Simple cart
 
