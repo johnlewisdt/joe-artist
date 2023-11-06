@@ -3,6 +3,7 @@
     "mini_cart_promo_product": "joes-promo-deal",
     "upsell_heading": "Need more?",
     "upsell_text": "Buy any item and get the Planet Promo for just £10. \n<small>for a limited time only<\/small>",
+    "mini_cart_qualifier_product": "joes-album",
     "sections": {
       "header": {
         "type": "header",

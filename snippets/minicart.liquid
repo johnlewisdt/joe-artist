@@ -12,22 +12,9 @@
       {% render 'icon-loading-overlay-spinner' %}
 
       <div class="mini-cart-items mini-cart-items-js">
-        {% render 'minicart-items' %}
+        {% render 'minicart-items', cart: cart, section: section, settings: settings %}
       </div>
     </mini-cart>
 
-    <div class="drawer-footer mini-cart-footer">
-
-      <a href="/checkout" class="button button-full-width hide-mini-cart-empty-js {% if cart.item_count == 0 %}hidden{% endif %}">{{ 'cart.general.checkout' | t }}</a>
-      {% if settings.mini_cart_promo_product != blank %}
-        <div class="mini-cart-footer-promo">
-          {% assign promo_product = settings.mini_cart_promo_product %}
-          {% assign upsell = all_products[promo_product.handle] %}
-
-         {% render 'product-card-upsell', upsell: upsell %}
-        </div>
-      {% endif %}
-
-    </div>
   </div>
 </side-drawer>

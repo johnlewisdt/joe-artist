@@ -57,7 +57,33 @@
       <div class="mini-cart-empty">
         <p>{{ 'cart.general.empty' | t }}</p>
       </div>
-      <side-drawer-toggle class="button button--full-width" data-drawer="drawer-mini-cart">{{ 'cart.general.continue_shopping' | t }}</side-drawer-toggle>
+      <side-drawer-toggle class="button" data-drawer="drawer-mini-cart">{{ 'cart.general.continue_shopping' | t }}</side-drawer-toggle>
     {%- endif -%}
   </div>
 </form>
+
+<div class="drawer-footer mini-cart-footer">
+
+  <a href="/checkout" class="button button-full-width hide-mini-cart-empty-js {% if cart.item_count == 0 %}hidden{% endif %}">{{ 'cart.general.checkout' | t }}</a>
+    
+  {% if settings.mini_cart_promo_product != blank %}
+    <div class="mini-cart-footer-promo">
+      {%- liquid
+        assign promo_product = settings.mini_cart_promo_product
+        assign promo_qualifier = settings.mini_cart_qualifier_product
+        assign upsell = all_products[promo_product.handle]
+        assign cart_qualifier = all_products[promo_qualifier.handle]
+        assign qualifier = false
+        for cart_item in cart.items
+          if cart_qualifier.id == cart_item.product_id
+            assign qualifier = true
+          endif
+        endfor 
+        if qualifier == true
+          render 'product-card-upsell', upsell: upsell
+        endif 
+      -%}
+    </div>
+  {% endif %}
+
+</div>

@@ -33,7 +33,7 @@
 
 /* Header */
 .drawer-header {
-  padding: 2rem 2rem 0 0;
+  padding: 2rem 0 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,6 +45,7 @@
 }
 
 .drawer-header side-drawer-toggle {
+  cursor: pointer;
   height: 3.8rem;
 }
 

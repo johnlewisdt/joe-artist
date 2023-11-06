@@ -10,6 +10,9 @@ class SideDrawerToggle extends HTMLElement {
       //Toggle drawer event
       const event = new Event('drawer-toggle');
       drawer.dispatchEvent(event);
+     
+      const event2 = new Event('mini-cart-open');
+      drawer.dispatchEvent(event2);
       
     })
   }
