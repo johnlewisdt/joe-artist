@@ -3,7 +3,8 @@ class Minicart extends HTMLElement {
     super();
 
     //event listeners
-    document.addEventListener('mini-cart-open', this.renderMinicart(), this.handleMinicartTrigger.bind(this));
+    document.addEventListener('DOMContentLoaded', this.renderMinicart());
+    document.addEventListener('mini-cart-open', this.handleMinicartTrigger.bind(this));
   }
 
   //quantity input change

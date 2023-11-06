@@ -74,12 +74,16 @@
         assign upsell = all_products[promo_product.handle]
         assign cart_qualifier = all_products[promo_qualifier.handle]
         assign qualifier = false
+        assign promo_in_cart = false
         for cart_item in cart.items
           if cart_qualifier.id == cart_item.product_id
             assign qualifier = true
           endif
+          if upsell.id == cart_item.product_id
+            assign promo_in_cart = true
+          endif
         endfor 
-        if qualifier == true
+        if qualifier == true and promo_in_cart == false
           render 'product-card-upsell', upsell: upsell
         endif 
       -%}
